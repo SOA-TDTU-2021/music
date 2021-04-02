@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  api:
+    build: ./api
+    container_name: music_api
+    restart: always
+    volumes:
+      - ./api:/app
+
+  ui:
+    build: ./ui
+    container_name: music_ui
+    restart: always
+    volumes:
+      - ./ui:/app
+
+  nginx:
+    build: ./nginx
+    container_name: music_nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "8080:8080"

@@ -1,0 +1,6 @@
+[submodule "ui"]
+	path = ui
+	url = https://github.com/SOA-TDTU-2021/music-ui
+[submodule "api"]
+	path = api
+	url = https://github.com/SOA-TDTU-2021/music-api
