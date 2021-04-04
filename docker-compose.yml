@@ -22,3 +22,18 @@ services:
     ports:
       - "80:80"
       - "8080:8080"
+
+  db:
+    image: jbergstroem/mariadb-alpine:10.4.17
+    container_name: music_db
+    environment:
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASS}
+    volumes:
+      - music_db:/var/lib/mysql
+      - ./db:/docker-entrypoint-initdb.d
+
+volumes:
+  music_db:
