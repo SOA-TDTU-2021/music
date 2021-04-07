@@ -12,6 +12,8 @@ services:
     build: ./ui
     container_name: music_ui
     restart: always
+    environment: 
+      SERVER_URL: ${SERVER_URL}
     volumes:
       - ./ui:/app
 
